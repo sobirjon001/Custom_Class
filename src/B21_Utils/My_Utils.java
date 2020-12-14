@@ -7,6 +7,7 @@ public class My_Utils {
     for (int i = 2; i < num; i++) {
       if (num % i == 0) {
         isPrime = false;
+        break;
       }
     }
     if (num == 1) {
@@ -33,11 +34,11 @@ public class My_Utils {
     return var3;
   }
 
-  static String oneNumber(String var1) {
+  private static String oneNumber(String var1) {
     String var2 = "";
     switch (var1) {
       case "0":
-        var2 = "zero";
+        var2 = "";
         break;
       case "1":
         var2 = "one";
@@ -70,7 +71,7 @@ public class My_Utils {
     return var2;
   }
 
-  static String twoNumbers(String var1) {
+  private static String twoNumbers(String var1) {
     String var2 = "";
     String var3 = "";
     if (var1.charAt(0) == '1') {
@@ -134,19 +135,15 @@ public class My_Utils {
           var3 = "ninety";
           break;
       }
-      char var4 = var1.charAt(1);
-      String var5 = Character.toString(var4);
-      return var3 + " " + oneNumber(var5);
+      String var4 = var1.substring(1, 2);
+      return var3 + " " + oneNumber(var4);
     }
   }
 
-  static String threeNumbers(String var1) {
-    char var2 = var1.charAt(0);
-    char var3 = var1.charAt(1);
-    char var4 = var1.charAt(2);
-    String var5 = Character.toString(var2);
-    String var6 = Character.toString(var3);
-    String var7 = Character.toString(var4);
-    return oneNumber(var5) + " hundred " + twoNumbers(var6 + var7);
+  private static String threeNumbers(String var1) {
+    String var2 = var1.substring(0, 1);
+    String var3 = var1.substring(1, 2);
+    String var4 = var1.substring(2, 3);
+    return oneNumber(var2) + " hundred " + twoNumbers(var3 + var4);
   }
 }
