@@ -16,134 +16,132 @@ public class My_Utils {
     return isPrime;
   }
 
-
-  public static String numToWords(int var1) {
+  public static String numToWords(int num) {
     // Author Serhii Tynovskyi
-    String var2 = Integer.toString(var1);
-    String var3 = "";
-    int len = var2.length();
-    if (len == 1) {
-      var3 = oneNumber(var2);
+    String numString = Integer.toString(num);
+    String result = "";
+    int len = numString.length();
+    if (len == 1) { // single numbers
+      result = oneNumber(numString);
     }
-    if (len == 2) {
-      var3 = twoNumbers(var2);
+    if (len == 2) { // decimal numbers
+      result = twoNumbers(numString);
     }
-    if (len == 3) {
-      var3 = threeNumbers(var2);
+    if (len == 3) { // hundred numbers
+      result = threeNumbers(numString);
     }
-    return var3;
+    return result;
   }
 
-  private static String oneNumber(String var1) {
-    String var2 = "";
-    switch (var1) {
+  private static String oneNumber(String numString) {
+    String result = "";
+    switch (numString) {
       case "0":
-        var2 = "";
+        result = ""; // we can't say twenty zero -> can't say zero at all
         break;
       case "1":
-        var2 = "one";
+        result = "one";
         break;
       case "2":
-        var2 = "two";
+        result = "two";
         break;
       case "3":
-        var2 = "three";
+        result = "three";
         break;
       case "4":
-        var2 = "four";
+        result = "four";
         break;
       case "5":
-        var2 = "five";
+        result = "five";
         break;
       case "6":
-        var2 = "six";
+        result = "six";
         break;
       case "7":
-        var2 = "seven";
+        result = "seven";
         break;
       case "8":
-        var2 = "eight";
+        result = "eight";
         break;
       case "9":
-        var2 = "nine";
+        result = "nine";
         break;
     }
-    return var2;
+    return result;
   }
 
-  private static String twoNumbers(String var1) {
-    String var2 = "";
-    String var3 = "";
-    if (var1.charAt(0) == '1') {
-      switch (var1) {
+  private static String twoNumbers(String numString) {
+    String result1 = "";
+    String result2 = "";
+    if (numString.charAt(0) == '1') { // teen numbers
+      switch (numString) {
         case "10":
-          var2 = "ten";
+          result1 = "ten";
           break;
         case "11":
-          var2 = "eleven";
+          result1 = "eleven";
           break;
         case "12":
-          var2 = "twelve";
+          result1 = "twelve";
           break;
         case "13":
-          var2 = "thirteen";
+          result1 = "thirteen";
           break;
         case "14":
-          var2 = "fourteen";
+          result1 = "fourteen";
           break;
         case "15":
-          var2 = "fifteen";
+          result1 = "fifteen";
           break;
         case "16":
-          var2 = "sixteen";
+          result1 = "sixteen";
           break;
         case "17":
-          var2 = "seventeen";
+          result1 = "seventeen";
           break;
         case "18":
-          var2 = "eighteen";
+          result1 = "eighteen";
           break;
         case "19":
-          var2 = "nineteen";
+          result1 = "nineteen";
           break;
       }
-      return var2;
+      return result1;
     } else {
-      switch (var1.charAt(0)) {
+      switch (numString.charAt(0)) { // decimal numbers
         case '2':
-          var3 = "twenty";
+          result2 = "twenty";
           break;
         case '3':
-          var3 = "thirty";
+          result2 = "thirty";
           break;
         case '4':
-          var3 = "forty";
+          result2 = "forty";
           break;
         case '5':
-          var3 = "fifty";
+          result2 = "fifty";
           break;
         case '6':
-          var3 = "sixty";
+          result2 = "sixty";
           break;
         case '7':
-          var3 = "seventy";
+          result2 = "seventy";
           break;
         case '8':
-          var3 = "eighty";
+          result2 = "eighty";
           break;
         case '9':
-          var3 = "ninety";
+          result2 = "ninety";
           break;
       }
-      String var4 = var1.substring(1, 2);
-      return var3 + " " + oneNumber(var4);
+      String numStringLast = numString.substring(1);
+      return result2 + " " + oneNumber(numStringLast); // + single number
     }
   }
 
-  private static String threeNumbers(String var1) {
-    String var2 = var1.substring(0, 1);
-    String var3 = var1.substring(1, 2);
-    String var4 = var1.substring(2, 3);
-    return oneNumber(var2) + " hundred " + twoNumbers(var3 + var4);
+  private static String threeNumbers(String numString) {
+    String num1 = numString.substring(0, 1); // first number - hundreds
+    String num2 = numString.substring(1); // two last numbers - decimal and single
+    return oneNumber(num1) + " hundred " + twoNumbers(num2);
   }
 }
