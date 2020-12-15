@@ -19,6 +19,7 @@ public class My_Utils {
     return isPrime;
   }
 
+  // Creates Integer ArrayList of prime numbers sequence with passed through upper limit
   public static ArrayList<Integer> primeNumArrayList(int n){
     ArrayList<Integer> result = new ArrayList<>();
     for (int i=1; i<=n; i++){
@@ -29,7 +30,8 @@ public class My_Utils {
     return result;
   }
 
-  public static ArrayList<Integer> fibonachiArrayList(int n){
+  // Creates Integer ArrayList of Fibonacci sequence with passed through upper limit
+  public static ArrayList<Integer> fibonacciArrayList(int n){
     ArrayList<Integer> result = new ArrayList<>();
     int n1 = 0, n2 = 1;
     while (n2 < n){
@@ -41,6 +43,8 @@ public class My_Utils {
   }
 
   // Author Serhii Tynovskyi
+  // Creates word version of numbers with passed through number in String
+  // for now only accepts up to 999, work in progress
   public static String numToWords(String numString) {
     System.out.println(numString);
     String result = "";
