@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class Main {
   public static void main(String[] args) {
 
-    //System.out.println(My_Utils.numToWords(125));
+    System.out.println(My_Utils.numToWords("00556"));
 
     //System.out.println(My_Utils.fibonachiArrayList(50));
 
-    //System.out.println(My_Utils.primeNumArrayList(200));
-/*
+    //System.out.println(My_Utils.primeNumArrayList(80));
+    /*
     System.out.println("===============================================");
 
     ArrayList<Test> testCases = new ArrayList<Test>(){{
@@ -29,9 +29,10 @@ public class Main {
       System.out.println(i + ". - " + testCases.get(i));
     }
 
-    //Test.
-    //testCases.get(1).
+    //System.out.println(Test.name);
+    //testCases.get(1).count
 
- */
+     */
+
   }
 }

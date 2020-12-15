@@ -3,8 +3,9 @@ package B21_Utils;
 import java.util.ArrayList;
 
 public class My_Utils {
+
+  // Checks if given number is prime number
   public static boolean isPrimeNumber(int num) {
-    // Checks if given number is prime number
     boolean isPrime = true;
     for (int i = 2; i < num; i++) {
       if (num % i == 0) {
@@ -20,7 +21,7 @@ public class My_Utils {
 
   public static ArrayList<Integer> primeNumArrayList(int n){
     ArrayList<Integer> result = new ArrayList<>();
-    for (int i=1; i<(n+1); i++){
+    for (int i=1; i<=n; i++){
       if(isPrimeNumber(i)){
         result.add(i);
       }
@@ -30,7 +31,7 @@ public class My_Utils {
 
   public static ArrayList<Integer> fibonachiArrayList(int n){
     ArrayList<Integer> result = new ArrayList<>();
-    int n1 = 1, n2 = 1;
+    int n1 = 0, n2 = 1;
     while (n2 < n){
       result.add(n1 + n2);
       n1 = n2;
@@ -39,11 +40,16 @@ public class My_Utils {
     return result;
   }
 
-  public static String numToWords(int num) {
-    // Author Serhii Tynovskyi
-    String numString = Integer.toString(num);
+  // Author Serhii Tynovskyi
+  public static String numToWords(String numString) {
+    System.out.println(numString);
     String result = "";
+    while (numString.charAt(0)=='0'){
+      numString = numString.substring(1);
+    }
     int len = numString.length();
+    System.out.println(numString);
+    System.out.println(numString.length());
     if (len == 1) { // single numbers
       result = oneNumber(numString);
     }
@@ -94,71 +100,70 @@ public class My_Utils {
   }
 
   private static String twoNumbers(String numString) {
-    String result1 = "";
-    String result2 = "";
+    String result = "";
     if (numString.charAt(0) == '1') { // teen numbers
       switch (numString) {
         case "10":
-          result1 = "ten";
+          result = "ten";
           break;
         case "11":
-          result1 = "eleven";
+          result = "eleven";
           break;
         case "12":
-          result1 = "twelve";
+          result = "twelve";
           break;
         case "13":
-          result1 = "thirteen";
+          result = "thirteen";
           break;
         case "14":
-          result1 = "fourteen";
+          result = "fourteen";
           break;
         case "15":
-          result1 = "fifteen";
+          result = "fifteen";
           break;
         case "16":
-          result1 = "sixteen";
+          result = "sixteen";
           break;
         case "17":
-          result1 = "seventeen";
+          result = "seventeen";
           break;
         case "18":
-          result1 = "eighteen";
+          result = "eighteen";
           break;
         case "19":
-          result1 = "nineteen";
+          result = "nineteen";
           break;
       }
-      return result1;
+      return result;
     } else {
       switch (numString.charAt(0)) { // decimal numbers
         case '2':
-          result2 = "twenty";
+          result = "twenty";
           break;
         case '3':
-          result2 = "thirty";
+          result = "thirty";
           break;
         case '4':
-          result2 = "forty";
+          result = "forty";
           break;
         case '5':
-          result2 = "fifty";
+          result = "fifty";
           break;
         case '6':
-          result2 = "sixty";
+          result = "sixty";
           break;
         case '7':
-          result2 = "seventy";
+          result = "seventy";
           break;
         case '8':
-          result2 = "eighty";
+          result = "eighty";
           break;
         case '9':
-          result2 = "ninety";
+          result = "ninety";
           break;
       }
       String numStringLast = numString.substring(1);
-      return result2 + " " + oneNumber(numStringLast); // + single number
+      return result + " " + oneNumber(numStringLast); // + single number
     }
   }
 
