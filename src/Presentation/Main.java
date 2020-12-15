@@ -7,7 +7,11 @@ import java.util.ArrayList;
 public class Main {
   public static void main(String[] args) {
 
-    System.out.println(My_Utils.numToWords(125));
+    //System.out.println(My_Utils.numToWords(125));
+
+    //System.out.println(My_Utils.fibonachiArrayList(50));
+
+    //System.out.println(My_Utils.primeNumArrayList(200));
 /*
     System.out.println("===============================================");
 

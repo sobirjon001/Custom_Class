@@ -1,5 +1,7 @@
 package B21_Utils;
 
+import java.util.ArrayList;
+
 public class My_Utils {
   public static boolean isPrimeNumber(int num) {
     // Checks if given number is prime number
@@ -14,6 +16,27 @@ public class My_Utils {
       isPrime = false;
     }
     return isPrime;
+  }
+
+  public static ArrayList<Integer> primeNumArrayList(int n){
+    ArrayList<Integer> result = new ArrayList<>();
+    for (int i=1; i<(n+1); i++){
+      if(isPrimeNumber(i)){
+        result.add(i);
+      }
+    }
+    return result;
+  }
+
+  public static ArrayList<Integer> fibonachiArrayList(int n){
+    ArrayList<Integer> result = new ArrayList<>();
+    int n1 = 1, n2 = 1;
+    while (n2 < n){
+      result.add(n1 + n2);
+      n1 = n2;
+      n2 = result.get(result.size()-1);
+    }
+    return result;
   }
 
   public static String numToWords(int num) {
