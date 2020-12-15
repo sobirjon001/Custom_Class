@@ -66,6 +66,7 @@ public class My_Utils {
     return result;
   }
 
+  // this is supplementary method, only used internally
   private static String oneNumber(String numString) {
     String result = "";
     switch (numString) {
@@ -103,6 +104,7 @@ public class My_Utils {
     return result;
   }
 
+  // this is supplementary method, only used internally
   private static String twoNumbers(String numString) {
     String result = "";
     if (numString.charAt(0) == '1') { // teen numbers
@@ -171,6 +173,7 @@ public class My_Utils {
     }
   }
 
+  // this is supplementary method, only used internally
   private static String threeNumbers(String numString) {
     String num1 = numString.substring(0, 1); // first number - hundreds
     String num2 = numString.substring(1); // two last numbers - decimal and single
